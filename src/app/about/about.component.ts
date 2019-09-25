@@ -26,16 +26,16 @@ export class AboutComponent implements OnInit {
     // payload contains the document that belongs to the collection being query
     // payload contains a doc -> inside
     // doc contains both Id and Data
-    this.db.collection('courses').snapshotChanges()
-       .subscribe(snaps => {
-         const courses: Course[] = snaps.map(snap => {
-           return <Course> {
-             id: snap.payload.doc.id,
-             ...snap.payload.doc.data()
-           };
-         });
-         console.log(courses);
-       });
+    // this.db.collection('courses').snapshotChanges()
+    //    .subscribe(snaps => {
+    //      const courses: Course[] = snaps.map(snap => {
+    //        return <Course> {
+    //          id: snap.payload.doc.id,
+    //          ...snap.payload.doc.data()
+    //        };
+    //      });
+    //      console.log(courses);
+    //    });
 
     // stateChanges: gives back only the modification changes of doc being made
     // this.db.collection('courses').stateChanges()
